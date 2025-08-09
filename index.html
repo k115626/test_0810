@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>贪吃蛇 Snake</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__header">
+        <h1 class="app__title">贪吃蛇</h1>
+        <div class="scoreboard">
+          <div class="scoreboard__item">
+            <span>得分</span>
+            <strong id="score">0</strong>
+          </div>
+          <div class="scoreboard__item">
+            <span>最高分</span>
+            <strong id="highScore">0</strong>
+          </div>
+          <div class="scoreboard__item">
+            <span>速度</span>
+            <strong id="speedLabel">1x</strong>
+          </div>
+        </div>
+      </header>
+
+      <main class="app__main">
+        <div class="board">
+          <canvas id="gameCanvas" width="480" height="480" aria-label="游戏画布" role="img"></canvas>
+          <div id="overlay" class="overlay overlay--hidden" aria-live="polite"></div>
+        </div>
+
+        <div class="controls">
+          <button id="startBtn" class="btn">开始</button>
+          <button id="pauseBtn" class="btn" disabled>暂停</button>
+          <button id="restartBtn" class="btn" disabled>重开</button>
+          <label class="slider">
+            <input id="speedSlider" type="range" min="1" max="5" step="1" value="1" />
+            <span>速度</span>
+          </label>
+        </div>
+
+        <details class="help">
+          <summary>操作说明</summary>
+          <ul>
+            <li>键盘方向键 或 WASD 控制方向</li>
+            <li>空格：开始/暂停</li>
+            <li>触屏：滑动手势控制方向</li>
+          </ul>
+        </details>
+      </main>
+
+      <footer class="app__footer">
+        <small>本地运行，无需联网</small>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+
